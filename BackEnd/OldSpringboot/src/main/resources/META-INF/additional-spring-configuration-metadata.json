@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "air.secret.air_getImmunizationURL",
+      "type": "java.lang.String",
+      "description": "Description for air.secret.air_getImmunizationURL."
+  }
+] }

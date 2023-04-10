@@ -1,0 +1,10 @@
+service: c19
+
+runtime: java11
+
+instance_class: F2
+
+env_variables:
+  SPRING_PROFILES_ACTIVE: "prod"
+
+entrypoint: java -jar c19connect-1.0.jar

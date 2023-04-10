@@ -1,0 +1,14 @@
+cloud:
+  aws:
+    credentials:
+      access-key: AKIATBSH53TJACQDYU72
+      secret-key: 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
+    region:
+      static: ap-southeast-2
+    stack:
+      auto: false
+
+application:
+  bucket:
+    name: quaefactadocumentupload
+

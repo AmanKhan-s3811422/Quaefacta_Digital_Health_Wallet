@@ -1,0 +1,78 @@
+{
+    "statusCode": "AIR-I-1100",
+    "codeType": "AIRIBU",
+    "message": "Your request was successfully processed.",
+    "immunisationDetails": {
+        "encounters": [{
+            "episodes": [{
+                "id": 1,
+                "vaccineBatch": "1234567",
+                "vaccineCode": "COMIRN",
+                "vaccineDose": "V",
+                "vaccineSerialNumber": "tsetet",
+                "information": {
+                    "status": "VALID",
+                    "code": null,
+                    "text": null
+                },
+                "editable": false,
+                "actionRequiredIndicator": false
+            }],
+            "editable": false,
+            "dateOfService": "23102021",
+            "dateSubmitted": "23102021",
+            "schoolId": "",
+            "claimSeqNum": 30,
+            "immEncSeqNum": 1,
+            "claimId": "W211023$"
+        }, {
+            "episodes": [{
+                "id": 5,
+                "vaccineBatch": "",
+                "vaccineCode": "COVAST",
+                "vaccineDose": "V",
+                "vaccineSerialNumber": "",
+                "information": {
+                    "status": "VALID",
+                    "code": null,
+                    "text": null
+                },
+                "editable": false,
+                "actionRequiredIndicator": false
+            }, {
+                "id": 4,
+                "vaccineBatch": "",
+                "vaccineCode": "GNPOL",
+                "vaccineDose": "V",
+                "vaccineSerialNumber": "",
+                "information": {
+                    "status": "VALID",
+                    "code": null,
+                    "text": null
+                },
+                "editable": false,
+                "actionRequiredIndicator": false
+            }, {
+                "id": 3,
+                "vaccineBatch": "",
+                "vaccineCode": "HBV",
+                "vaccineDose": "V",
+                "vaccineSerialNumber": "",
+                "information": {
+                    "status": "VALID",
+                    "code": null,
+                    "text": null
+                },
+                "editable": false,
+                "actionRequiredIndicator": false
+            }],            
+            "editable": false,
+            "dateOfService": "05082021",
+            "dateSubmitted": "051082021",
+            "schoolId": "",
+            "claimSeqNum": 30,
+            "immEncSeqNum": 1,
+            "claimId": "W211023$"
+        }]
+    }
+}
