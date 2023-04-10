@@ -1,0 +1,59 @@
+- name: Build inventory
+  hosts: localhost
+  tasks:
+
+    - name: Get the Web server IP
+      set_fact:
+        web_ip: "3.26.230.247"
+
+    - name: Get the web server lb DNS
+      set_fact:
+        web_lb_dns: "digitalhealthwalletapp.com"
+
+    - name: Add web server to inventory
+      add_host:
+        name: "{{ web_ip }}"
+        groups:
+          - web
+
+- name: Deploy web server
+  hosts: web
+  become: true
+  tasks:
+
+
+    - name: Upload app to server
+      unarchive:
+        src: "files/application.tgz"
+        dest: "/home/ubuntu"
+        
+
+    - name: Installing nodejs
+      apt: name=nodejs update_cache=yes
+    - name: Installing npm
+      apt: name=npm update_cache=yes
+
+
+        
+    - name: go to npm folder
+      shell: cd /home/ubuntu/application sudo npm install
+    - name: Building
+      shell: cd /home/ubuntu/application sudo npm run build
+      
+    
+
+    - name: Get the app path
+      set_fact:
+        app_path: "/home/ubuntu/"
+
+    - name: Update template
+      template:
+        src: "files/service.tpl"
+        dest: "/etc/systemd/system/app.service"
+
+    - name: Restart web
+      ansible.builtin.service:
+        name: app.service
+        state: restarted
+
+
