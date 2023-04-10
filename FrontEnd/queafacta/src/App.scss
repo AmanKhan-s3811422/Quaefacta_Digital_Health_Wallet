@@ -1,0 +1,251 @@
+@import "./scss/bootstrap.scss";
+
+html {
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+body {
+  position: relative; // This is needed for the footer RTT button to appear, I don't know why.
+  height: 100%;
+  width: 100%;
+
+  margin: 0;
+  min-height: 100vh;
+  padding-top: 72px;
+  padding-bottom: 15px;
+  box-sizing: inherit;
+  overflow: auto;
+  background-image: linear-gradient(#5388c5, #deedfc);
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+//* HEADER //
+.header-navbar {
+  min-height: 61px;
+}
+.header-container {
+  min-width: 287px;
+  align-items: flex-start;
+}
+.header-brand {
+  margin: 0px;
+}
+
+.QF-icon {
+  pointer-events: none;
+  margin-right: 10px;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+//* FOOTER //
+// This ensures the button is in the bottom right corner and is always "on top"
+.nav-vertical {
+  z-index: 99;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+}
+
+//* APP //
+// This sets the style of the main container in app.tsx which wraps all route
+// components.
+.QF-App-MainContainer {
+  background-color: #ebf1f4;
+  padding: 10px;
+  border-radius: 10px;
+  margin: auto;
+}
+//* Home page
+.QF-Home-div {
+  text-align: center;
+  align-items: center;
+}
+
+.QF-Icon-Big {
+  max-width: 256px;
+  max-height: 256px;
+}
+
+//* FORMS //@at-root
+.QF-Form-Centered-Narrow {
+  text-align: center;
+  padding: 0px 10px 0px 10px;
+}
+
+.QF-Form-Centered-Narrow .form-control {
+  min-width: 300px;
+}
+
+//* COMMON // These items are use across all pages.
+
+// Use this with "btn btn-primary" for responsive features.
+.QF-Primary-Button {
+  min-width: 300px;
+  max-width: 400px;
+  background: #00a4b7;
+  border: #00a4b7;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+}
+
+.QF-Primary-Button-White {
+  color: #00a4b7;
+  min-width: 300px;
+  max-width: 400px;
+  background: white;
+  border: 2px solid #00a4b7;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+}
+
+// Keep these values consistent with QF-Primary-Button
+.QF-Matching-Dropdown #dropdown-basic-button {
+  border: 2px solid darkgray;
+  min-width: 300px;
+  max-width: 400px;
+}
+.QF-Matching-Dropdown .dropdown-item {
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.max-width {
+  max-width: 414px;
+}
+
+.upload-file {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  border: 2px dashed #b5b5b5;
+}
+
+.upload-btn {
+  background-color: #00a4b7;
+  color: #fff;
+  display: table;
+}
+
+.gender-group {
+  border: 1px solid #000;
+}
+
+.gender-button {
+  border: none;
+  color: #000;
+}
+
+.document-upload-button-group {
+  border:none;
+}
+
+.gender-group input:checked + .btn {
+  color: #fff !important;
+}
+
+.max-width {
+  max-width: 414px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.medicare-pane {
+  background-color: #dcf9fd;
+}
+.form-control.min-width-auto {
+  min-width: auto;
+}
+
+.append-plus {
+  position: relative;
+}
+.append-plus .plus{
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  width: 24px;
+  height: 24px;
+  background-color: #00a4b7;
+  color: #fff;
+  border-radius: 100%;
+  border: none;
+  padding: 0;
+}
+
+.append-cross {
+  position: relative;
+  border: 1px solid #00a4b7;
+  color: #000;
+  padding-right: 30px;
+}
+.append-cross .cross{
+  position: absolute;
+  right: 2px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  color: #000;
+  border-radius: 100%;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.abs-right {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  display: block;
+  margin: auto 0;
+}
+
+.medicare-profile-button-white {
+  background-color: white;
+  border: 2px solid #A1A1A1;
+} 
+.medicare-profile-button-green {
+  background-color: #D5FEDE;
+  border: 2px solid #00A4B7;
+}
+.medicare-profile-button-red {
+  background-color: #FED5D5;
+  border: 2px solid #989898;
+}
+.medicare-detail-button-white {
+  background-color: white;
+  border: 2px solid #A1A1A1;
+}
+.medicare-detail-button-green {
+  background-color: #D5FEDE;
+  border: 2px solid #00A4B7;
+}
+.medicare-detail-button-red {
+  background-color: #FED5D5;
+  border: 2px solid #989898;
+}
+
+.button-heading {
+  color: #00A4B7;
+}
+
+//* This rule applies the CSS changes needed for when the WebApp goes into
+//* "mobile device mode".
+@media screen and (max-width: 574px) {
+  .QF-App-MainContainer {
+    //background-color: red; // This red is for showing that the mode is active during development
+    border-radius: 0px;
+  }
+  body {
+    padding-top: 62px;
+    background-color: #ebf1f4; // this and the next are a bit of a bodge, but it works...
+    background-image: none;
+  }
+}
