@@ -1,0 +1,86 @@
+This is a copy of the application-local.properties in the backend:
+BackEnd/OldSpringboot/src/main/resources/application-local.properties
+
+Of particular note, please ensure that your local MySQL Db has these settings:
+# Local
+spring.datasource.url=jdbc:mysql://localhost:3306/queafacta
+spring.datasource.username=root
+spring.datasource.password=SuperAwesome69
+server.port=8080
+
+The above should be enough for your local dev environment to work with MySQL 8.
+
+The full file is copied below this line.
+
+===========================================
+### ---Google Cloud and DB configs---
+## These configs connect Google Cloud SQL directly into Hibernate/JPA, 
+## allowing the postgres db to be accessed like a typical springboot datasource
+## https://docs.spring.io/spring-cloud-gcp/docs/1.1.0.M1/reference/html/
+
+# GCP IAM Credentials file (ignored by git, please manually provide in src\main\resources\qfh4.json)
+spring.cloud.gcp.credentials.location=classpath:qfh-gcp.json
+spring.cloud.gcp.project-id=quaefacta-covid-checkers
+
+# DB auth info
+#spring.datasource.url=jdbc:mysql://database-2.c67ccmmvmcph.ap-southeast-2.rds.amazonaws.com:3306/c19connect?createDatabaseIfNotExist=true
+#spring.datasource.username=admin
+#spring.datasource.password=password
+# Local
+spring.datasource.url=jdbc:mysql://localhost:3306/queafacta
+spring.datasource.username=root
+spring.datasource.password=SuperAwesome69
+server.port=8080
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.properties.hibernate.format_sql=true
+### ---App configs---
+
+# So app starts despite "table already exists" errors.
+spring.sql.init.continue-on-error=true
+# Enforces database initialization
+spring.sql.init.mode=always
+
+## --Hibernate Properties--
+spring.jpa.show-sql=true
+# The SQL dialect makes Hibernate generate better SQL for the chosen database
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+# Hibernate DDL auto (create, create-drop, validate, update)
+spring.jpa.hibernate.ddl-auto=create-drop
+#new comment
+
+// spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
+
+# GCP Bucket Url
+gcp.bucket = qfh-c19-connect
+gcp.bucket.url = https://storage.googleapis.com/qfh-c19-connect/compliance-documents/
+
+# Max filesize for Document uploads
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=11MB
+#max file and request size
+spring.http.multipart.max-file-size=10MB
+spring.http.multipart.max-request-size=11MB
+
+###  --PRODA and AIR Properties--
+
+spring.secret = springserver-access-123 
+
+proda.secret.proda_dhsSubjectID = JSmithyTestingComputer
+proda.secret.proda_dhsSubjectIDType = http://ns.humanservices.gov.au/audit/type/proda/device
+proda.secret.proda_dhsProductID = AIR API - Immunisation Encounter_v1
+proda.secret.proda_dhsAuditID = 7761781974
+proda.secret.proda_client_id = QUF00000
+proda.secret.providerNo = 2442701B
+
+air.secret.air_client_id = c3616159f34dc939d69ad20b1ca695c4
+air.secret.air_getTokenURL = http://54.252.21.60:8080/auth
+# air.secret.air_getTokenURL = http://localhost:8081/auth
+
+air.secret.air_successfulRequestCode = AIR-I-1100
+
+air.secret.air_getIndividualURL = https://test.healthclaiming.api.humanservices.gov.au/claiming/ext-vnd/air/immunisation/v1/individual/details
+air.secret.air_getImmunizationURL = https://test.healthclaiming.api.humanservices.gov.au/claiming/ext-vnd/air/immunisation/v1/individual/immunisation-history/details
+
+#spring properties
+spring.cloud.compatibility-verifier.enabled=false

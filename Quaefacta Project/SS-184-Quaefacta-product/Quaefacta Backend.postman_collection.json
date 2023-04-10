@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "fbc49326-7378-41f3-a6b8-011d7fa8a7f3",
+		"name": "Quaefacta Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17085269"
+	},
+	"item": [
+		{
+			"name": "api/s3/upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/quoctran/Pictures/Joey.jpg"
+						},
+						{
+							"key": "file_type",
+							"value": "Medicare",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "298",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/s3/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"s3",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/s3/download/{file_type}/{user_id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/s3/download/Medicare/298",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"s3",
+						"download",
+						"Medicare",
+						"298"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/s3/delete/{file_type}/{user_id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/quoctran/Pictures/Joey.jpg"
+						},
+						{
+							"key": "file_type",
+							"value": "medicare_card",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "21",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/s3/delete/Medicare/298",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"s3",
+						"delete",
+						"Medicare",
+						"298"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"rabbit@rabbit.com\",\n    \"password\": \"11111111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/users/information/{user_id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"rabbit@rabbit.com\",\n    \"password\": \"11111111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/information/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"information",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit profile (api/users/{user_id})",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2,\n    \"firstName\": \"Edit Loppy\",\n    \"lastName\": \"Edit Loo\",\n    \"gender\": \"Male\",\n    \"address1\": \"123 Cold Street\",\n    \"address2\": \"A second address\",\n    \"postCode\": \"3016\",\n    \"country\": \"Australia\",\n    \"state\": \"VIC\",\n    \"phone\": \"094552431\",\n    \"email\": \"email@email.com\",\n    \"dob\": \"21/09/1987\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"rabbit@rabbit.com\",\n    \"password\": \"11111111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
